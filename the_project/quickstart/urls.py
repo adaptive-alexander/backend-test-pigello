@@ -1,7 +1,12 @@
-from django.urls import path, include
+from django.urls import include, path
+from rest_framework import routers
+from planetary_play import views
 
-from the_project.quickstart import views
+router = routers.DefaultRouter()
+router.register(r'users', views.UserViewSet)
+router.register(r'groups', views.GroupViewSet)
+
 
 urlpatterns = [
-    path('some_endpoint_name/', views.example_view),
+    path('', include(router.urls)),
 ]
