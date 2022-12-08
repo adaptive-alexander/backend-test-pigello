@@ -14,10 +14,25 @@ def run():
         )
         planet_obj.save()
         print(f'Planet {planet.get("englishName")} uploaded')
-        try:
+        if planet.get('moons') is not None:
             moons = planet.get('moons')
             moon_links = [moon.get('rel') for moon in moons]
             print("Moons:")
             print(moon_links)
-        except:
+            for link in moon_links:
+                moon_data = requests.get(link).json()
+                try:
+                    moon = PlanetaryBody(
+                        name=f'{moon_data.get("englishName").lower()}',
+                        mass=(moon_data.get("mass").get("massValue")) * 10 ** (moon_data.get("mass").get("massExponent")),
+                        gravity_constant=moon_data.get('gravity'),
+                        volume=moon_data.get('vol').get('volValue') * 10 ** moon_data.get('vol').get('volExponent'),
+                        orbits=planet_obj
+                    )
+                    moon.save()
+                    print(f'Uploaded moon: {moon_data.get("englishName")}')
+                except AttributeError:
+                    print(f'Moon {moon_data.get("englishName")} is missing data')
+
+        else:
             print(f'Planet {planet.get("englishName")} has no moons')
