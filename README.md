@@ -2,6 +2,9 @@
 ## A Small Code Interview Django App
 
 ## N.B.
+The relevant code for the completed task is in the root-level app "planetary play". This is by design to make
+the separation clear.
+
 As the starting point API appears to only have moons orbiting planets these
 are the only bodies that are uploaded currently. This could be easily changed in the
 upload script.
