@@ -2,12 +2,11 @@
 ## A Small Code Interview Django App
 
 ## N.B.
-The relevant code for the completed task is in the root-level app "planetary play". This is by design to make
+The relevant code for the completed task is in the root-level app /planetary_play. This is by design to make
 the separation clear.
 
-As the starting point API appears to only have moons orbiting planets these
-are the only bodies that are uploaded currently. This could be easily changed in the
-upload script.
+As the starting point API (https://api.le-systeme-solaire.net/rest/) appears to only have moons orbiting planets these
+are the only bodies that are uploaded currently. This could be easily changed in the upload script.
 
 The DEBUG option is still turned on as the assumption is that the code will be run locally. This
 could also be easily changed in the settings.py file.
