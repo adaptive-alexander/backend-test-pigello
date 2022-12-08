@@ -4,7 +4,7 @@ from planetary_play import views
 
 router = routers.DefaultRouter()
 router.register(r'planetary_body', views.PlanetaryBodyViewSet)
-router.register(r'planet', views.PlanetViewSet)
+router.register(r'planets', views.PlanetViewSet)
 
 
 urlpatterns = [

@@ -36,7 +36,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     "planetary_play",
-    "rest_framework"
+    "rest_framework",
+    "django_extensions"
 ]
 
 MIDDLEWARE = [
@@ -100,9 +101,7 @@ AUTH_PASSWORD_VALIDATORS = [
 REST_FRAMEWORK = {
     # Use Django's standard `django.contrib.auth` permissions,
     # or allow read-only access for unauthenticated users.
-    'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
-    ]
+    'DEFAULT_PERMISSION_CLASSES': []
 }
 
 # Internationalization
