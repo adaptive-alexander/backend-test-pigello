@@ -28,5 +28,5 @@ python manage.py runserver
 ```
 
 ## Quick Exploration of the API
-There is a set of convenience functions to use in /tests. You can
+There is a set of convenience functions to use in /tests/curl.py. You can
 use these to test the basic functionality of the API and explore the endpoints.
